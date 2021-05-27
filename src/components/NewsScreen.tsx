@@ -7,7 +7,7 @@ export const NewsScreen = () => {
         <View>
             <View style={styles.header}></View>
             <View>
-                <InputBlock placeholder={'Enter Article'} title={'Search Article'}/>
+                <InputBlock placeholder={'Enter Article'} titleButton={'Search Article'}/>
             </View>
         </View>
 

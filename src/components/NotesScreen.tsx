@@ -37,7 +37,7 @@ export const NotesScreen = () => {
         <View style = {styles.rootNote}>
             <View style = {styles.header}></View>
             <View>
-                <InputBlock placeholder={'Enter your note'} title={'Add note'}/>
+                <InputBlock placeholder={'Enter your note'} titleButton={'Add note'}/>
             </View>
             <ScrollView style={styles.scrollBlock}>
                 {Data.map(el => (

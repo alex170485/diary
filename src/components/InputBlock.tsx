@@ -1,19 +1,23 @@
 import React from "react";
 import {View,Text,StyleSheet, TextInput, Button} from "react-native";
+import {GetWeatherCityTC} from "../Reducers/WeaterReducer";
+import {useDispatch} from "react-redux";
 
 
 type InputBlockPropsType = {
     placeholder: string,
-    title: string
-
+    titleButton: string,
+    title: string,
+    setTitle: (text: string)=>void
 }
 
 
 export const InputBlock = (props: InputBlockPropsType) => {
+    const dispatch = useDispatch();
     return (
         <View style={styles.inputBlock}>
-            <TextInput placeholder={props.placeholder} style={styles.input}/>
-            <Button title={props.title} onPress={()=> {console.log('fff')}} />
+            <TextInput placeholder={props.placeholder} style={styles.input} value={props.title} onChangeText={(text) => {props.setTitle(text)}}/>
+            <Button title={props.titleButton} onPress={() => dispatch(GetWeatherCityTC(props.title))} />
         </View>
     )
 }
